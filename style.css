@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; 
+}
+
+:root {
+    --button-color: #FFC14D;
+    --main-color: #FFF2DB;
+}
+
+.ListOfNotes {
+    width: 25vw;
+    min-width: 200px;
+    border-right: 5px solid black;
+    overflow-y: auto;
+}
+
+.Zametka {
+    width: calc(100% - 20px);
+    min-height: 60px;
+    background-color: var(--main-color);
+    border: 2px solid var(--button-color);
+    border-radius: 10px;
+    margin: 10px;
+    font-size: 10px;
+    padding: 15px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.PlusNotes {
+    background-color: #FFC14D;
+    border-radius: 20px;
+    height: 70px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    user-select: none;
+    cursor: pointer;
+}
+
+/* ПРАВАЯ ЧАСТЬ */
+.Editor {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 10px;
+    overflow: hidden;
+}
+
+input, textarea {
+    background-color: var(--main-color);
+    border: 1px solid var(--button-color);
+    width: 100%;
+}
+
+input {
+    height: 35px;
+}
+
+textarea {
+    height: calc(100vh - 250px); /* Чтобы влезало без прокрутки */
+    resize: none;
+}
+
+.SaveButton {
+    background-color: #FFC14D;
+    height: 35px;
+    width: 120px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.Zametka.active {
+    background-color: #FFC14D;
+}
+
+.DeleteButton {
+    background-color: red;
+    padding: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: center;
+    text-align: center;
+    display: flex;
+    user-select: none;
+}
+
+.ButtonsContainer {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}

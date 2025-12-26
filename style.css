@@ -6,23 +6,27 @@
   box-sizing: border-box;
 }
 
+:root {
+  --button-color: #ffc14d;
+  --main-color: #fff2db;
+  --font-color: black;
+  --background-color: white;
+}
+
 body {
   font-family: "Roboto", sans-serif;
   display: flex;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-}
-
-:root {
-  --button-color: #ffc14d;
-  --main-color: #fff2db;
+  background-color: var(--background-color);
+  color: var(--font-color);
 }
 
 .ListOfNotes {
   width: 25vw;
   min-width: 200px;
-  border-right: 5px solid black;
+  border-right: 5px solid var(--font-color);
   overflow-y: auto;
 }
 
@@ -124,4 +128,22 @@ textarea:focus-visible {
   outline: none;
   border-radius: 5px;
   transition: border-radius 0.5s;
+}
+
+.darktema {
+  position: fixed;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 5px;
+  right: 5px;
+  user-select: none;
+  cursor: pointer;
+}
+
+body.dark {
+  --font-color: white;
+  --background-color: #1e1e1e;
 }

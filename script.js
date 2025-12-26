@@ -6,6 +6,7 @@ let ListOfNotes = document.querySelector(".ListOfNotes");
 let notes = [];
 let currentNumber = null;
 let DeleteButton = document.querySelector(".DeleteButton");
+let themeButton = document.querySelector(".darktema");
 function Save() {
   notes[currentNumber].title = tema.value;
   notes[currentNumber].text = text.value;
@@ -78,9 +79,14 @@ function loader() {
   }
 }
 
+function darkthemefun() {
+  document.body.classList.toggle("dark");
+}
+
 saveButton.addEventListener("click", Save);
 plusButton.addEventListener("click", addNotes);
 DeleteButton.addEventListener("click", deleteNote);
+themeButton.addEventListener("click", darkthemefun);
 loader();
 renderNotes();
 if (notes.length > 0) {
